@@ -143,11 +143,69 @@ namespace zl219 {
     }
 }
 
+#include "220\220.h"
+namespace zl220 {
+    void test() {
+        leetcode220::Solution s;
+        vector<int> nums = { -1,2147483647 };
+        cout << s.containsNearbyAlmostDuplicate(nums, 1, 2147483647) << endl;
+    }
+}
+
+#include "142\142.h"
+#include <cassert>
+#include <vector>
+namespace zl142 {
+    leetcode142::ListNode* create_linked(vector<int>& v, int tail) {
+        assert(tail >= 0);
+
+        if (v.empty())
+            return nullptr;
+        
+        leetcode142::ListNode* dummy = &leetcode142::ListNode(0);
+        leetcode142::ListNode* cur = dummy;
+        for (int i = 0; i < (int)v.size(); i++) {
+            cur->next = new leetcode142::ListNode(v[i]);
+            cur = cur->next;
+        }
+
+        leetcode142::ListNode* enter = dummy->next;
+        int i = 0;
+        while (i < tail) {
+            enter = enter->next;
+            i++;
+        }
+        cur->next = enter;
+        return dummy->next;
+    }
+    void cat_linked(leetcode142::ListNode* node, int n) {
+        for (int i = 0; i < n; i++) {
+            cout << node->val << " ";
+            node = node->next;
+        }
+        cout << endl;
+    }
+    void test() {
+        vector<int> v = { 3,4,0,1,6 };
+        leetcode142::ListNode* head = create_linked(v, 2);
+        leetcode142::ListNode* tmp = head;
+        //cat_linked(tmp, 10);
+
+        leetcode142::Solution s;
+        clock_t start_time = clock();
+        int res = s.detectCycle(head)->val;
+        //cout << float(clock() - start_time) / CLOCKS_PER_SEC << endl;
+        cout << res << endl;
+    }
+}
+
 int main() {
     //zl08::test();
     //zl15::test();
     //zl23::test();
+    zl142::test();
     //zl146::test();
     //zl217::test();
-    zl219::test();
+    //zl219::test();
+    //zl220::test();
 }

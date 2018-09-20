@@ -10,6 +10,9 @@
 #define _LEETCODE23_BEGIN	namespace leetcode23 {
 #define _LEETCODE23_END		}
 
+#define _LEETCODE142_BEGIN	namespace leetcode142 {
+#define _LEETCODE142_END		}
+
 #define _LEETCODE146_BEGIN	namespace leetcode146 {
 #define _LEETCODE146_END		}
 
@@ -18,6 +21,9 @@
 
 #define _LEETCODE219_BEGIN	namespace leetcode219{
 #define _LEETCODE219_END		}
+
+#define _LEETCODE220_BEGIN	namespace leetcode220{
+#define _LEETCODE220_END		}
 
 #endif // !_GENERAL_H_
 
